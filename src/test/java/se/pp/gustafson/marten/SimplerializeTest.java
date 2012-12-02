@@ -10,12 +10,13 @@ import nu.xom.Builder;
 import nu.xom.Document;
 import nu.xom.Node;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.jaxen.JaxenException;
 import org.jaxen.xom.XOMXPath;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Do some basic tests against JSON and XML output from
@@ -47,7 +48,7 @@ public final class SimplerializeTest
         for(final Object value : expected)
         {
             assertEquals("xml", value, ((Node)xml.next()).getValue());
-            assertEquals("json", value, ((JsonNode)json.next()).getValueAsText());
+            assertEquals("json", value, ((JsonNode)json.next()).asText());
         }
     }
 

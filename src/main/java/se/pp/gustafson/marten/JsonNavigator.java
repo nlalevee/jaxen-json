@@ -2,14 +2,15 @@ package se.pp.gustafson.marten;
 
 import java.util.Iterator;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.node.ArrayNode;
-import org.codehaus.jackson.node.ContainerNode;
 import org.jaxen.FunctionCallException;
 import org.jaxen.NamedAccessNavigator;
 import org.jaxen.UnsupportedAxisException;
 import org.jaxen.XPath;
 import org.jaxen.saxpath.SAXPathException;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ContainerNode;
 
 public final class JsonNavigator implements NamedAccessNavigator
 {
@@ -161,7 +162,7 @@ public final class JsonNavigator implements NamedAccessNavigator
     public Iterator<?> getAttributeAxisIterator(final Object contextNode) throws UnsupportedAxisException
     {
         System.err.println("getAttributeAxisIterator: " + contextNode);
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).getElements() : null;
+        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).elements() : null;
     }
 
     @Override
@@ -217,7 +218,7 @@ public final class JsonNavigator implements NamedAccessNavigator
     public Iterator<?> getFollowingSiblingAxisIterator(final Object contextNode) throws UnsupportedAxisException
     {
         System.err.println("getFollowingSiblingAxisIterator");
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).getElements() : null;
+        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).elements() : null;
     }
 
     @Override
