@@ -1,3 +1,17 @@
+/*
+ * Copyright 2012 the original author or authors.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package se.pp.gustafson.marten;
 
 import java.util.Iterator;
@@ -12,310 +26,223 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ContainerNode;
 
-public final class JsonNavigator implements NamedAccessNavigator
-{
-    private static final long serialVersionUID = -6359270025930864975L;
+@SuppressWarnings("serial")
+public final class JsonNavigator implements NamedAccessNavigator {
 
     @Override
-    public Iterator<?> getAttributeAxisIterator(final Object contextNode, final String localName, final String namespacePrefix, final String namespaceURI)
-            throws UnsupportedAxisException
-    {
-        System.err.println("getAttributeAxisIterator<?> matching: " + ": " + localName + " on: " + contextNode);
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).findValues(localName).iterator() : null;
+    public Iterator<?> getAttributeAxisIterator(final Object contextNode, final String localName, final String namespacePrefix,
+            final String namespaceURI) throws UnsupportedAxisException {
+        return (contextNode instanceof JsonNode) ? ((JsonNode) contextNode).findValues(localName).iterator() : null;
     }
 
     @Override
     public Iterator<?> getChildAxisIterator(final Object contextNode, final String localName, final String namespacePrefix, final String namespaceURI)
-            throws UnsupportedAxisException
-    {
-        System.err.println("getChildAxisIterator<?> matching: " + ": " + localName + " on: " + contextNode);
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).findValues(localName).iterator() : null;
+            throws UnsupportedAxisException {
+        return (contextNode instanceof JsonNode) ? ((JsonNode) contextNode).findValues(localName).iterator() : null;
     }
 
     @Override
-    public String getAttributeName(Object arg0)
-    {
-        System.err.println("getAttributeName");
+    public String getAttributeName(Object arg0) {
         return null;
     }
 
     @Override
-    public String getAttributeNamespaceUri(Object arg0)
-    {
-        System.err.println("getAttributeNamespaceUri");
+    public String getAttributeNamespaceUri(Object arg0) {
         return null;
     }
 
     @Override
-    public String getAttributeQName(Object arg0)
-    {
-        System.err.println("getAttributeQName");
+    public String getAttributeQName(Object arg0) {
         return null;
     }
 
     @Override
-    public String getAttributeStringValue(Object arg0)
-    {
-        System.err.println("getAttributeStringValue");
+    public String getAttributeStringValue(Object arg0) {
         return null;
     }
 
     @Override
-    public String getCommentStringValue(Object arg0)
-    {
-        System.err.println("getCommentStringValue");
+    public String getCommentStringValue(Object arg0) {
         return null;
     }
 
     @Override
-    public String getElementName(final Object contextNode)
-    {
-        System.err.println("getElementName: " + contextNode);
+    public String getElementName(final Object contextNode) {
         return null;
     }
 
     @Override
-    public String getElementNamespaceUri(final Object contextNode)
-    {
-        System.err.println("getElementNamespaceUri: " + contextNode);
+    public String getElementNamespaceUri(final Object contextNode) {
         return null;
     }
 
     @Override
-    public String getElementQName(Object arg0)
-    {
-        System.err.println("getElementQName");
+    public String getElementQName(Object arg0) {
         return null;
     }
 
     @Override
-    public String getElementStringValue(Object arg0)
-    {
-        System.err.println("getElementStringValue");
+    public String getElementStringValue(Object arg0) {
         return null;
     }
 
     @Override
-    public String getNamespacePrefix(Object arg0)
-    {
-        System.err.println("getNamespacePrefix");
+    public String getNamespacePrefix(Object arg0) {
         return null;
     }
 
     @Override
-    public String getNamespaceStringValue(Object arg0)
-    {
-        System.err.println("getNamespaceStringValue");
+    public String getNamespaceStringValue(Object arg0) {
         return null;
     }
 
     @Override
-    public String getTextStringValue(Object arg0)
-    {
-        System.err.println("getTextStringValue");
+    public String getTextStringValue(Object arg0) {
         return null;
     }
 
     @Override
-    public boolean isAttribute(final Object contextNode)
-    {
-        System.err.println("isAttribute: " + contextNode);
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).isValueNode() : false;
+    public boolean isAttribute(final Object contextNode) {
+        return (contextNode instanceof JsonNode) ? ((JsonNode) contextNode).isValueNode() : false;
     }
 
     @Override
-    public boolean isElement(final Object contextNode)
-    {
-        System.err.println("isElement: " + contextNode);
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).isValueNode() : false;
+    public boolean isElement(final Object contextNode) {
+        return (contextNode instanceof JsonNode) ? ((JsonNode) contextNode).isValueNode() : false;
     }
 
     @Override
-    public boolean isText(final Object contextNode)
-    {
-        System.err.println("isText: " + contextNode);
+    public boolean isText(final Object contextNode) {
         return false;
     }
 
     @Override
-    public XPath parseXPath(String arg0) throws SAXPathException
-    {
-        System.err.println("parseXPath");
+    public XPath parseXPath(String arg0) throws SAXPathException {
         return null;
     }
 
     @Override
-    public Iterator<?> getAncestorAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getAncestorAxisIterator");
+    public Iterator<?> getAncestorAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Iterator<?> getAncestorOrSelfAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getAncestorOrSelfAxisIterator");
+    public Iterator<?> getAncestorOrSelfAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Iterator<?> getAttributeAxisIterator(final Object contextNode) throws UnsupportedAxisException
-    {
-        System.err.println("getAttributeAxisIterator: " + contextNode);
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).elements() : null;
+    public Iterator<?> getAttributeAxisIterator(final Object contextNode) throws UnsupportedAxisException {
+        return (contextNode instanceof JsonNode) ? ((JsonNode) contextNode).elements() : null;
     }
 
     @Override
-    public Iterator<?> getChildAxisIterator(final Object contextNode) throws UnsupportedAxisException
-    {
-        System.err.println("getChildAxisIterator: " + contextNode);
-        return (contextNode instanceof ArrayNode) ? ((ArrayNode)contextNode).iterator() : null;
+    public Iterator<?> getChildAxisIterator(final Object contextNode) throws UnsupportedAxisException {
+        return (contextNode instanceof ArrayNode) ? ((ArrayNode) contextNode).iterator() : null;
     }
 
     @Override
-    public Iterator<?> getDescendantAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getDescendantAxisIterator");
+    public Iterator<?> getDescendantAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Iterator<?> getDescendantOrSelfAxisIterator(final Object contextNode) throws UnsupportedAxisException
-    {
-        System.err.println("getDescendantOrSelfAxisIterator: " + contextNode.getClass().getSimpleName() + ": " + contextNode);
-        return (contextNode instanceof ContainerNode) ? ((ContainerNode)contextNode).iterator() : null;
+    public Iterator<?> getDescendantOrSelfAxisIterator(final Object contextNode) throws UnsupportedAxisException {
+        return (contextNode instanceof ContainerNode) ? ((ContainerNode<?>) contextNode).iterator() : null;
     }
 
     @Override
-    public Object getDocument(String arg0) throws FunctionCallException
-    {
-        System.err.println("getDocument");
+    public Object getDocument(String arg0) throws FunctionCallException {
         return null;
     }
 
     @Override
-    public Object getDocumentNode(final Object contextNode)
-    {
-        System.err.println("getDocumentNode: " + contextNode);
+    public Object getDocumentNode(final Object contextNode) {
         return contextNode;
     }
 
     @Override
-    public Object getElementById(Object arg0, String arg1)
-    {
-        System.err.println("getElementById");
+    public Object getElementById(Object arg0, String arg1) {
         return null;
     }
 
     @Override
-    public Iterator<?> getFollowingAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getFollowingAxisIterator");
+    public Iterator<?> getFollowingAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Iterator<?> getFollowingSiblingAxisIterator(final Object contextNode) throws UnsupportedAxisException
-    {
-        System.err.println("getFollowingSiblingAxisIterator");
-        return (contextNode instanceof JsonNode) ? ((JsonNode)contextNode).elements() : null;
+    public Iterator<?> getFollowingSiblingAxisIterator(final Object contextNode) throws UnsupportedAxisException {
+        return (contextNode instanceof JsonNode) ? ((JsonNode) contextNode).elements() : null;
     }
 
     @Override
-    public Iterator<?> getNamespaceAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getNamespaceAxisIterator");
+    public Iterator<?> getNamespaceAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public short getNodeType(Object arg0)
-    {
-        System.err.println("getNodeType");
+    public short getNodeType(Object arg0) {
         return 0;
     }
 
     @Override
-    public Iterator<?> getParentAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getParentAxisIterator");
+    public Iterator<?> getParentAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Object getParentNode(final Object contextNode) throws UnsupportedAxisException
-    {
-        System.err.println("getParentNode: " + contextNode);
+    public Object getParentNode(final Object contextNode) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Iterator<?> getPrecedingAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getPrecedingAxisIterator");
+    public Iterator<?> getPrecedingAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public Iterator<?> getPrecedingSiblingAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getPrecedingSiblingAxisIterator");
+    public Iterator<?> getPrecedingSiblingAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public String getProcessingInstructionData(Object arg0)
-    {
-        System.err.println("getProcessingInstructionData");
+    public String getProcessingInstructionData(Object arg0) {
         return null;
     }
 
     @Override
-    public String getProcessingInstructionTarget(Object arg0)
-    {
-        System.err.println("getProcessingInstructionTarget");
+    public String getProcessingInstructionTarget(Object arg0) {
         return null;
     }
 
     @Override
-    public Iterator<?> getSelfAxisIterator(Object arg0) throws UnsupportedAxisException
-    {
-        System.err.println("getSelfAxisIterator");
+    public Iterator<?> getSelfAxisIterator(Object arg0) throws UnsupportedAxisException {
         return null;
     }
 
     @Override
-    public String translateNamespacePrefixToUri(String arg0, Object arg1)
-    {
-        System.err.println("translateNamespacePrefixToUri");
+    public String translateNamespacePrefixToUri(String arg0, Object arg1) {
         return null;
     }
 
     @Override
-    public boolean isComment(Object arg0)
-    {
-        System.err.println("isComment");
+    public boolean isComment(Object arg0) {
         return false;
     }
 
     @Override
-    public boolean isNamespace(Object arg0)
-    {
-        System.err.println("isNamespace");
+    public boolean isNamespace(Object arg0) {
         return false;
     }
 
     @Override
-    public boolean isProcessingInstruction(Object arg0)
-    {
-        System.err.println("isProcessingInstruction");
+    public boolean isProcessingInstruction(Object arg0) {
         return false;
     }
 
     @Override
-    public boolean isDocument(Object arg0)
-    {
-        System.err.println("isDocument");
+    public boolean isDocument(Object arg0) {
         return false;
     }
 }
